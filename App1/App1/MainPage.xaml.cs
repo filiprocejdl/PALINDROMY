@@ -9,7 +9,7 @@ namespace App1
 {
     public partial class MainPage : ContentPage
     {
-        string InputText;
+        
         public MainPage()
         {
             InitializeComponent();
@@ -17,27 +17,75 @@ namespace App1
            
         }
 
-        void JeToPalindrom()
+       
+
+        private void OnButtonClicked(object sender, EventArgs e)
         {
-
+            string text = Input.Text;
             
-            InputText = Input.Text;
 
-            if (string.IsNullOrEmpty(InputText))
+            if (string.IsNullOrEmpty(text))
             {
-                Result.Text = "Prosím napiště palindrom!";
+                Result.Text = "Zadejte slovo!";
                 Result.TextColor = Color.Red;
-                InputText = "";
             } else
             {
-                foreach 
+                text = text.Replace(" ", "");
+                if (JeToPalindrom(text))
+                {
+                    Result.Text = "Text je palindrom!";
+                    Result.TextColor = Color.Blue;
+                }
+                else
+                {
+                    Result.Text = "Zadaný text není palindrom!";
+                    Result.TextColor = Color.Red;
+                }
             }
-        } 
+            
+           
+        }
 
-         
-        void OnButtonClicked(object sender, EventArgs args)
+        private bool JeToPalindrom(string text)
         {
-            JeToPalindrom();
+            List<string> nwm = new List<string>();
+            int y = 0;
+            foreach (char char1 in text)
+            {
+                nwm.Add(text[y].ToString());    
+                y++;
+            }
+
+            for (int x = 0; x < nwm.Count; x++)
+            {
+                if (nwm[x].ToLower() == "c" && x < nwm.Count)
+                {
+                    if (nwm[x + 1].ToLower() == "h")
+                    {
+                        nwm[x] = "ch";
+                        nwm.RemoveAt(x + 1);
+                    }
+                }
+            }
+
+            for (int i = 0; i < nwm.Count; i++)
+            {
+                if ((nwm[i].ToLower()) == (nwm[nwm.Count - 1 - i].ToLower()))
+                {
+                    if (i == nwm.Count - 1)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            };
+            return false;
         }
     }
+
+
+    
 }

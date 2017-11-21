@@ -7,8 +7,8 @@
         <StackLayout Padding="5,10">
             <Label TextColor="#F44336" VerticalOptions="Center" HorizontalOptions="Center" FontSize = "30" Text="PALINDROM" />
             <Entry x:Name="Input"  Placeholder=" write palindrom"  />
-            <Button x:Name="Buton" Text="Klik me!" BackgroundColor="#F44336" Opacity="0.9" Clicked="OnButtonClicked"  />
-            <Label x:Name="Result" TextColor="#F44336" VerticalOptions="Center" HorizontalOptions="Center" FontSize = "20" Text=""  />
+            <Button x:Name="Buton" Text="?Je to palindrom?" BackgroundColor="#F44336" Opacity="0.9" Clicked="OnButtonClicked"  />
+            <Label x:Name="Result" TextColor="Black" Opacity="0.8" VerticalOptions="Center" HorizontalOptions="Center" FontSize = "20" Text=""  />
         </StackLayout>
     </ContentPage.Content>
 	
