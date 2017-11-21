@@ -9,9 +9,35 @@ namespace App1
 {
     public partial class MainPage : ContentPage
     {
+        string InputText;
         public MainPage()
         {
             InitializeComponent();
+            
+           
+        }
+
+        void JeToPalindrom()
+        {
+
+            
+            InputText = Input.Text;
+
+            if (string.IsNullOrEmpty(InputText))
+            {
+                Result.Text = "Prosím napiště palindrom!";
+                Result.TextColor = Color.Red;
+                InputText = "";
+            } else
+            {
+                foreach 
+            }
+        } 
+
+         
+        void OnButtonClicked(object sender, EventArgs args)
+        {
+            JeToPalindrom();
         }
     }
 }
